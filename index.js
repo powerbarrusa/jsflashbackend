@@ -4,8 +4,8 @@ const port = process.env.PORT || 3000
 const dotenv = require("dotenv").config()
 var cors = require('cors')
 
-const env = process.env.NODE_ENV || 'development'
-const config = require('./knexfile')[env]
+const environment = process.env.NODE_ENV || 'development'
+const config = require('./knexfile')[environment]
 const knex = require('knex')(config)
 
 app.use(cors())

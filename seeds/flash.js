@@ -10,4 +10,4 @@ exports.seed = function(knex, Promise) {
         {id: 3, name: '.reduce', description: 'Executes a reducer function (that you provide) on each member of the array resulting in a single output value.', example: ''}
       ]);
     });
-};
+  };
