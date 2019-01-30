@@ -2,7 +2,7 @@
 
 module.exports = {
 
-  development: {
+  production: {
     client: 'pg',
     connection: 'postgres://localhost/jsflash'
     }
