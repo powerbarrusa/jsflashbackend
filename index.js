@@ -1,8 +1,8 @@
 const express = require('express')
 const app = express()
 const port = process.env.PORT || 3000
-var cors = require('cors')
 const env = require("dotenv").config()
+var cors = require('cors')
 
 // const env = 'development'
 const config = require('./knexfile')[env]
