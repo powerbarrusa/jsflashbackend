@@ -22,8 +22,18 @@ app.get('/', (req, res, next) => {
   })
 })
 
-app.post('/', (req, res, next) => {
+app.put('/', (req, res, next) => {
   knex('flash').insert({name: ".austin"})
+  .then((rows) => {
+    res.send(rows)
+  })
+  .catch((err) => {
+    next(err)
+  })
+})
+
+app.delete('/:id', (req, res, next) => {
+  knex('flash').where('id', req.params.id).del()
   .then((rows) => {
     res.send(rows)
   })
@@ -40,4 +50,4 @@ app.use((req, res, next) => {
   res.status(404).json({ error: { message: 'Route not found, dude.' } })
 })
 
-  app.listen(port, () => console.log(`jsflashbackend listening on port ${port}!`))
+app.listen(port, () => console.log(`jsflashbackend listening on port ${port}!`))
